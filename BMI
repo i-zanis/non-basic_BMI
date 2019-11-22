@@ -1,0 +1,42 @@
+def BMI():
+#BMI non-basic BMI function
+  option = ""
+  #adding the option for Imperial or metric units
+  while option.lower() != "imp" and option.lower() != "met":
+    option = input("Please type [IMP] for Imperial or type [MET] for metric system: ")
+
+  #input for imperial
+  if option.lower() == "imp":
+    height = 0.0254 * float(input("Enter your height in inches? "))
+    weight = 0.4536 * float(input("Enter your weight in pounds? "))
+  #input for metric, requests centimetres and converted to metres  
+  elif option.lower() =="met":
+    height = (float(input("Enter your height in centimetres? "))/100)
+    weight = float(input("Enter your weight in kilograms? "))
+  #bmi formula
+  bmi = round(weight/(height*height), 1)
+  #ideal weight formula 24.9 = ideal bmi
+  ideal_weight = 24.9*(height*height) 
+  to_lose_weight = round(weight-ideal_weight, 1)
+  to_gain_weight = round(ideal_weight - weight, 1)
+  
+  if option.lower() == "imp":
+    to_lose_weight = round(2.20462 * to_lose_weight, 1) #conv to pounds
+    to_gain_weight = round(2.20462 * to_gain_weight, 1) #conv to pounds
+    unit = " pounds"
+  else:
+    unit = " kilograms"
+  #BMI categories
+  if bmi <= 18.5:
+    category = "underweight"
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category)
+    print("You need to gain " + str(to_gain_weight) + unit)
+  elif bmi<=24.9:
+    category = "healthy"
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category)
+  elif bmi>=29.9:
+    category = "overweight"
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category)
+    print("You need to lose " + str(to_lose_weight) + unit)
+
+BMI()
