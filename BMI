@@ -40,5 +40,4 @@ def BMI():
     print("You need to lose " + str(to_lose_weight) + unit)
 
 BMI()
-sdfsf
-sdfsdfsdf
+
