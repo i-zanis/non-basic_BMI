@@ -1,5 +1,5 @@
 def BMI():
-#BMI non-basic BMI function
+#BMI non-basic BMI function.
   option = ""
   #adding the option for Imperial or metric units
   while option.lower() != "imp" and option.lower() != "met":
