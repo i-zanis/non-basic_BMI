@@ -39,6 +39,5 @@ def BMI():
     print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category)
     print("You need to lose " + str(to_lose_weight) + unit)
 
-
 BMI()
 
